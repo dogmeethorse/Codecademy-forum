@@ -1,0 +1,19 @@
+var travel = function(){
+var i = 0;
+
+var mapx = 0;
+var mapy = 0;
+while(i === 0){
+
+var direction = prompt("(" + mapx + "," + mapy + ")Where to? (W,A,S,D)").toLowerCase;
+if (direction === "w"){
+mapy++;
+}else if(direction === "a"){
+mapx--;
+}else if(direction === "s"){
+mapy--;
+}else if(direction === "d"){
+mapx++;
+}
+}
+}
