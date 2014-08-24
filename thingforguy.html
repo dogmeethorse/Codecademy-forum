@@ -1,0 +1,46 @@
+ <doctype HTML>
+ 
+ <html> 
+<head>
+</head>
+<body>
+    <button onclick="battle1('attack');">Attack</button>
+    <button onclick="battle1('defend');">Defend</button>
+    <div id='output'></div>
+
+<script>
+
+var slime1hp = 10;
+var outputElement = document.getElementById('output');
+
+var sendOutput = function(output, addOrReplace){
+   if(addOrReplace == 'replace'){
+        outputElement.innerHTML = '<p>' + output + '</p>';
+    }
+    if(addOrReplace == 'add'){
+        outputElement.innerHTML += '<p>' + output + '</p>';
+    }
+}
+
+var battle1 = function(input){
+     switch(input) {
+           case 'attack':
+                var userDam = 5;
+                slime1hp = slime1hp - userDam;
+                sendOutput("You attacked! " +userDam, 'replace');
+                sendOutput("Slime has " +slime1hp +" HP left!", 'add');
+                break;
+            case 'defend':
+                var userDef = 5;
+                sendOutput("You defended! -" +userDef +" damage!", 'replace');
+                userhp = userhp +userDef;
+                break;
+            default:
+                sendOutput("You did nothing!", 'replace');
+                break;
+            }
+}
+
+ </script>
+ </body>
+</html>
